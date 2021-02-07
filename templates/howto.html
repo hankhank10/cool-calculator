@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Simple databases in flask</h1>
+<h2>What it does?</h2>
+<p>Takes an input database of characters from Happy Days</p>
+<p>Processes this data to determine whether the character is cool or not</p>
+<p>Outputs the data (including whether they are cool or not) to another database</p>
+<h2>Steps:</h2>
+<p>1. Check that there is nothing in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="blank">/show_output_database</a> endpoint. You should get an error.</p>
+<p>2. View what is in the input_database by visiting the <a href="{{ url_for('show_input_database') }}" target="blank">/show_input_database</a> endpoint</p>
+<p>3. Run the processing command by visiting the <a href="{{ url_for('process_everything') }}" target="blank">/process_everything</a></p>
+<p>4. Check that there is nothing in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="blank">/show_output_database endpoint.</a></p>
+
+</body>
+</html>
