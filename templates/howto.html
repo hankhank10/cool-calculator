@@ -11,11 +11,21 @@
 <p>Takes an input database of characters from Happy Days</p>
 <p>Processes this data to determine whether the character is cool or not</p>
 <p>Outputs the data (including whether they are cool or not) to another database</p>
+
 <h2>Steps:</h2>
-<p>1. Check that there is nothing in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="blank">/show_output_database</a> endpoint. You should get an error.</p>
-<p>2. View what is in the input_database by visiting the <a href="{{ url_for('show_input_database') }}" target="blank">/show_input_database</a> endpoint</p>
-<p>3. Run the processing command by visiting the <a href="{{ url_for('process_everything') }}" target="blank">/process_everything</a></p>
-<p>4. Check that there is nothing in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="blank">/show_output_database endpoint.</a></p>
+<p>1. Check that there is nothing in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="_blank">/show_output_database</a> endpoint. You should get an error.</p>
+<p>2. View what is in the input_database by visiting the <a href="{{ url_for('show_input_database') }}" target="_blank">/show_input_database</a> endpoint</p>
+<p>3. Run the processing command by visiting the <a href="{{ url_for('process_everything') }}" target="_blank">/process_everything</a></p>
+<p>4. Check what is in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="_blank">/show_output_database endpoint. You will see that our complex algo has determined who is cool and who is not.</a></p>
+
+<h2>Extra credit</h2>
+<p>1. Make the input database massive by adding an extra random 1,000,000 people to it by visiting the <a href="{{ url_for('create_lots_of_people') }}" target="_blank">/create_lots_of_people</a> endpoint.</p>
+<p>2. Imagine all the people. It's easy if you try, by visiting the <a href="{{ url_for('show_input_database') }}" target="_blank">/show_input_database</a> endpoint</p>
+<p>3. Run the processing command again and see how long it takes at <a href="{{ url_for('process_everything') }}" target="_blank">/process_everything</a></p>
+<p>4. Check what is in the output database by visiting the <a href="{{ url_for('show_output_database') }}" target="_blank">/show_output_database endpoint.</a></p>
+
+<h2>Notes</h2>
+<a>If you accidentally delete or corrupt the input database you can recreate it with the <a href="{{ url_for('create_input_database') }}" target="_blank">/create_input_database</a> endpoint</p>
 
 </body>
 </html>

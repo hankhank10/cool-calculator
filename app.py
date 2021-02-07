@@ -51,7 +51,7 @@ class OutputPerson(db.Model):
 # This route creates the input database - it's included here just so you know how it works
 # but you wouldn't actually need to do this in your workflow as your database already exists
 @app.route('/create_input_database')
-def debug_create_input_database():
+def create_input_database():
 
     # This deletes the existing records from the database...
     db.drop_all(bind='input_database')
@@ -119,6 +119,7 @@ def show_input_database():
     # dictionary to the output list
     for person in list_of_people:
         output_person = {
+            'id': person.id,
             'name': person.name,
             'nickname': person.nickname,
             'gender': person.gender,
@@ -147,6 +148,7 @@ def show_output_database():
     # Iterate through each result from the DB query, put the data from the query into a dictionary and then append that dictionary to the output list
     for person in list_of_people:
         output_person = {
+            'id': person.id,
             'name': person.name,
             'nickname': person.nickname,
             'gender': person.gender,
@@ -200,6 +202,20 @@ def process_everything():
     db.session.commit()
 
     return (str(number_of_people_processed) + " people processed of which " + str(number_of_cool_people_processed) + " were cool")
+
+
+@app.route('/create_lots_of_people')
+def create_lots_of_people():
+    for a in range(1,100000):
+        db.session.add(InputPerson(
+          name="Someone else",
+          nickname="Too boring to have a nickname",
+          gender="Unclear",
+          age=25
+        ))
+
+    db.session.commit()
+    return "100,000 people created in input database"
 
 
 # Index route
